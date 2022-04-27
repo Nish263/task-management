@@ -4,6 +4,10 @@ const PORT = 8000;
 
 app.use(express.json());
 
+// mongo connection
+import mongoClient from "./src/config/db.js";
+mongoClient();
+
 // root url
 app.get("/", (req, res) => {
   const person = {
