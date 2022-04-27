@@ -1,5 +1,6 @@
 import express from "express";
 const router = express.Router();
+import { insertTask } from "../models/task/TaskList.model.js";
 
 router.get("/", (req, res) => {
   res.json({
@@ -7,12 +8,19 @@ router.get("/", (req, res) => {
   });
 });
 
-router.post("/", (req, res) => {
-  const data = req.body;
-  res.json({
-    message: "post method",
-    data,
-  });
+router.post("/", async (req, res) => {
+  try {
+    const data = req.body;
+
+    const result = await insertTask(data);
+    console.log(result);
+    res.json({
+      message: "post method",
+      result,
+    });
+  } catch (error) {
+    console.log(error);
+  }
 });
 router.delete("/", (req, res) => {
   res.json({

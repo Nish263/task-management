@@ -5,8 +5,15 @@ Here the link for thr front end app..
 
 ## APIS
 
-1.  TASK API ENDPOINT
-    all the task api will follow the following format `{rootUrl}/api/v1/task`
+### TASK API ENDPOINT
 
-2.  USER API ENDPOINT
-    all the user api will follow the following format `{rootUrl}/api/v1/user`
+all the task api will follow the following format `{rootUrl}/api/v1/task`
+| # | Method | Path | Description |
+|---|-------- |------|----------------------------------------|
+| 1 | `GET` | `/` |Get all tasks |
+| 2 | `POST` | `/` |send a task obj to store in the database|
+| 3 | `DELETE`| `/{taskId}`| Delete the specific task |
+
+### USER API ENDPOINT
+
+all the user api will follow the following format `{rootUrl}/api/v1/user`
